@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Our Files/Scenes/TestScene.unity
+    guid: f9512bdffe2598b4fb538610537159d3
+  - enabled: 1
+    path: Assets/Our Files/Scenes/main.unity
+    guid: 8bc6ef07d0a460a42b04080e80579c7f
+  - enabled: 1
+    path: Assets/Our Files/Scenes/MainMenu.unity
+    guid: b65e7be1fb19c1e449b5d48a9f2cb3f3
+  - enabled: 1
+    path: Assets/Our Files/Scenes/MiniGame.unity
+    guid: 57d7f0ddf9171dd459f29482f2898cfe
+  - enabled: 1
+    path: Assets/Our Files/Scenes/Vessapaperipeli.unity
+    guid: bd17539179391a749ae5ec8afbbb34f5
+  - enabled: 1
+    path: Assets/Our Files/Scenes/Imuri.unity
+    guid: a4420d4032b12481899dce051d38f109
+  - enabled: 1
+    path: Assets/Our Files/Scenes/Toothbrushing.unity
+    guid: 240d5fdb20b7e2b4fa22bca365eca82a
+  - enabled: 1
+    path: Assets/Our Files/Scenes/FridgeStore.unity
+    guid: dc18c0e510a013d4e9bb7dadac368f8c
+  - enabled: 1
+    path: Assets/Our Files/Scenes/DishUp.unity
+    guid: e7a0c081fe20fac409e0a63251874573
+  - enabled: 1
+    path: Assets/Our Files/Scenes/Piha.unity
+    guid: 43284924a3f9f43e691f9900ec74b249
+  m_configObjects: {}
