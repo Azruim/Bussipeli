@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Our Files/Scenes/FridgeStore.unity
     guid: dc18c0e510a013d4e9bb7dadac368f8c
+  - enabled: 1
+    path: Assets/Our Files/Scenes/Piha.unity
+    guid: 43284924a3f9f43e691f9900ec74b249
   m_configObjects: {}

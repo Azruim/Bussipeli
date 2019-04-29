@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Our Files/Scenes/FridgeStore.unity
+- path: Assets/Our Files/Scenes/Toothbrushing.unity
   isLoaded: 1
   isActive: 1
