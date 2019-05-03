@@ -4,34 +4,46 @@ using UnityEngine;
 
 public class PickClothes : MonoBehaviour
 {
-    public bool playerPicking;
+    private bool isInTrigger;
+    [SerializeField]
+    private int shirtNumber;
+    private GameStatus gameStatus;
+    private bool[] shirts;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerPicking = false;
+        isInTrigger = false;
+        gameStatus = GameObject.Find("GameStatus").GetComponent<GameStatus>();
+        shirts = gameStatus.GetShirtHolder();
+        if(shirts[shirtNumber])
+        {
+            GameObject.Destroy(gameObject);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && playerPicking)
+        if (Input.GetKeyDown(KeyCode.Space) && isInTrigger && !gameStatus.GetWashingMachineStatus())
         {
-            Object.Destroy(gameObject);
+            gameStatus.SetPlayerHoldsObjectStatus(true);
+            gameStatus.SetShirtHolder(true, shirtNumber);
+            GameObject.Destroy(gameObject);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            playerPicking = true;
+            isInTrigger = true;
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            playerPicking = false;
+            isInTrigger = false;
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class vessapaperi : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class vessapaperi : MonoBehaviour
     public bool notFail;
     public bool winning;
 
+    private GameStatus gameStatus;
+
     private void Start()
     {
         rb2d = this.GetComponent<Rigidbody2D>();
@@ -30,6 +33,8 @@ public class vessapaperi : MonoBehaviour
         startTime = 0;
 
         transform.position = new Vector2(-4.5f, (Random.Range(0, 5) - 2));
+
+        gameStatus = GameObject.Find("GameStatus").GetComponent<GameStatus>();
     }
 
     void Update()
@@ -59,7 +64,7 @@ public class vessapaperi : MonoBehaviour
         }
 
         movement = new Vector2(1.0f * (xNopeus * boostMultiplier), directionY * (yNopeus * boostMultiplier));
-        Debug.Log(xNopeus * boostMultiplier);
+        //Debug.Log(xNopeus * boostMultiplier);
     }
 
     private void FixedUpdate()
@@ -89,6 +94,8 @@ public class vessapaperi : MonoBehaviour
             theVoitto = false;
             winning = false;
             notMoving = true;
+            gameStatus.AddPlayerPoints(5);
+            SceneManager.LoadScene("main");
         }
     }
 }

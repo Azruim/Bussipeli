@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class paperiFail : MonoBehaviour
 {
@@ -63,5 +64,6 @@ public class paperiFail : MonoBehaviour
     {
         Debug.Log("fail");
         theEnd = false;
+        SceneManager.LoadScene("main");
     }
 }

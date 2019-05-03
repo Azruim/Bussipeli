@@ -17,12 +17,12 @@ public class DialogueManager : MonoBehaviour
     private bool stopInput, buttons = false;
     private string scene;
 
-    private GameStatus timer;
+    private GameStatus gameStatus;
 
     void Start()
     {
         sentences = new Queue<string>();
-        timer = GameObject.Find("GameStatus").GetComponent<GameStatus>();
+        gameStatus = GameObject.Find("GameStatus").GetComponent<GameStatus>();
         stopInput = false;
 
         yesBtn.onClick.AddListener(ChangeScene);
@@ -52,7 +52,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         scene = dialogue.scene;
-        timer.SetTimerOn(false);
+        gameStatus.SetTimerOn(false);
         //tuo dialogi boksin esiin
         animator.SetBool("isOpen", true);
         sentences.Clear();
@@ -111,7 +111,7 @@ public class DialogueManager : MonoBehaviour
         yesBtn.gameObject.SetActive(false);
         noBtn.gameObject.SetActive(false);
         stopInput = false;
-        timer.SetTimerOn(true);
+        gameStatus.SetTimerOn(true);
         question = false;
     }
 

@@ -27,14 +27,12 @@ public class MiniGameTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space) && playerInTrigger)
+        if(Input.GetKeyDown(KeyCode.Space) && playerInTrigger 
+            && !gameStatus.GetMiniGamePlayed(miniGameName) //Gets the boolean for the minigame by sending the name as string, so that GameStatus knows what minigame we are handling
+            && !gameStatus.GetPlayerHoldsObjectStatus())  //Gets the boolean for player holding an object in hand. If yes, the player can't trigger a minigame.
         {
-            if(!gameStatus.GetMiniGamePlayed(miniGameName)) //gets the boolean for the minigame by sending the name as string, so that GameStatus what minigame we are 
-            {
-                gameStatus.SetMiniGamePlayed(miniGameName, true); //sets the minigame as "played", by sending a string so that GameStatus knows what minigame is we want to set as true
-                SceneManager.LoadScene(miniGameScene);
-            }
-            
+            gameStatus.SetMiniGamePlayed(miniGameName, true); //Sets the minigame as "played", by sending a string so that GameStatus knows what minigame is we want to set as true
+            SceneManager.LoadScene(miniGameScene);
         }
     }
 

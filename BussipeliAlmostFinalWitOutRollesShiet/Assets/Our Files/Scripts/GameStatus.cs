@@ -12,6 +12,9 @@ public class GameStatus : MonoBehaviour
     //Vector3 used to know the players position and to also set it.
     private Vector3 playerPosition;
     private int playerPoints; //Players "currency".
+    //1.Player Entered a ChangeAre Trigger variable, used to make sure we spawn the player correctly in a new area. 
+    //2.Meaning that our player doesn't save it's last coordinates when it is destroyed, thus when reloading a new area it won't spawn in the wrong place.
+    private bool enteredChangeTrigger;
     //-Player Items: (used to know if our player has certain items).
     private bool banana;
     private bool apple;
@@ -28,6 +31,11 @@ public class GameStatus : MonoBehaviour
     private bool vacuumCleanerGamePlayed;
     private bool toothBrushGamePlayed;
     private bool dishWashingGamePlayed;
+    //Booleans for misc. (shirts, washingMachine, bed, playerHoldingObject).
+    private bool[] shirtsHolder;
+    private bool washingMachineOn;
+    private bool bedMade;
+    private bool playerHoldsObject;
 
     //TIMER:
     //Variables for our clock timer
@@ -53,8 +61,9 @@ public class GameStatus : MonoBehaviour
         GameObject.DontDestroyOnLoad(this.gameObject); //We tell Unity that we don't want this GameObject to be destroyed.
 
         //PLAYER INFO:
-        playerPosition = new Vector3(-4.5f, -1.9f, 0.0f); //We set the starting coordinates for our player character, when the game starts.
+        playerPosition = new Vector3(-50.0f, -22.0f, 1.0f); //We set the starting coordinates for our player character, when the game starts.
         playerPoints = 50; //Players "currency" is set to 0 by default.
+        enteredChangeTrigger = false; //By default player has not entered a ChangeAreaTrigger.
         //-Player Items: (By default, player has none of the items at the start)
         banana = false;
         apple = false;
@@ -71,6 +80,14 @@ public class GameStatus : MonoBehaviour
         vacuumCleanerGamePlayed = false;
         toothBrushGamePlayed = false;
         dishWashingGamePlayed = false;
+        //Set booleans for misc. (shirts, washingMachine, bed, playerHoldingObject) items to be false by default at the start of the game.
+        shirtsHolder = new bool[3];
+        shirtsHolder[0] = false;
+        shirtsHolder[1] = false;
+        shirtsHolder[2] = false;
+        washingMachineOn = false;
+        bedMade = false;
+        playerHoldsObject = false;
 
         //TIMER:
         //We set our countdown time variables to be 2 minutes by default.
@@ -125,6 +142,16 @@ public class GameStatus : MonoBehaviour
     public void MinusPlayerPoints(int minusPoints) //Decrease points for the player.
     {
         playerPoints -= minusPoints;
+    }
+
+    //Used to GET the variable needed for checking if the player changed area scene (not a minigame scene).
+    public bool GetEnteredChangeAreaStatus()
+    {
+        return enteredChangeTrigger;
+    }
+    public void SetEnteredChangeAreaStatus(bool setter) //Used to SET the variable needed for checking if the player changed area scene(not a minigame scene).
+    {
+        enteredChangeTrigger = setter;
     }
 
     //Used to GET our item status and know if our player has the speific item.
@@ -230,6 +257,43 @@ public class GameStatus : MonoBehaviour
         {
             dishWashingGamePlayed = setter;
         }
+    }
+
+    //ShirtHolder methods.
+    public bool[] GetShirtHolder() //GETS the list of shirts.
+    {
+        return shirtsHolder;
+    }
+    public void SetShirtHolder(bool setter, int shirt) //SETS the booleans for the variables in our shirt list
+    {
+        shirtsHolder[shirt] = setter;
+    }
+    //Washing machine methods.
+    public bool GetWashingMachineStatus() //GET washing machine status.
+    {
+        return washingMachineOn;
+    }
+    public void SetWashingMashineStatus(bool setter) //SET washing machine status.
+    {
+        washingMachineOn = setter;
+    }
+    //Bed related methods.
+    public bool GetBedMadeStatus() //GETs bedMade boolean.
+    {
+        return bedMade;
+    }
+    public void SetBedMadeStatus(bool setter) //SETs bedMade boolean.
+    {
+        bedMade = setter;
+    }
+    //Methods related to player holding objects(shirts etc.) in hand.
+    public bool GetPlayerHoldsObjectStatus() //GETs the status of player holding object in hand
+    {
+        return playerHoldsObject;
+    }
+    public void SetPlayerHoldsObjectStatus(bool setter) //SETs the status of player holding object in hand
+    {
+        playerHoldsObject = setter;
     }
 
     //TIMER:

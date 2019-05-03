@@ -63,6 +63,8 @@ public class PlayerController : MonoBehaviour
         }
         this.transform.position = gameStatus.GetPlayerPosition();
 
+        gameStatus.SetEnteredChangeAreaStatus(false); //When the player is "created" in a new scene, it sets the enteredChangeArea back to false.
+
     }
 
     // Update is called once per frame
@@ -93,7 +95,7 @@ public class PlayerController : MonoBehaviour
             }
 
             //Player Space button input
-            if (Input.GetKeyUp("space") && isInTrigger)
+            if (Input.GetKeyUp("space") && isInTrigger && !gameStatus.GetPlayerHoldsObjectStatus())
             {
                 triggered = true;
                 if (dialogue != null)
@@ -132,6 +134,7 @@ public class PlayerController : MonoBehaviour
         }
         if (resetGame)
         {
+            Destroy(GameObject.Find("GameStatus"));
             SceneManager.LoadScene(beginningLevel);
         }
     }
@@ -168,7 +171,11 @@ public class PlayerController : MonoBehaviour
     private void OnDestroy()
     {
         //Debug.Log("I was destroyed");
-        gameStatus.SetPlayerPosition(this.transform.position); //When the player gets destroyed, we send the players coordinates to the GameStatus.
+        if(!gameStatus.GetEnteredChangeAreaStatus()) //If player did NOT enter a ChangeAreaTrigger, then we save it's last coordinates.
+        {
+            gameStatus.SetPlayerPosition(this.transform.position); //When the player gets destroyed, we send the players coordinates to the GameStatus.
+        }
+    
     }
 }
     
