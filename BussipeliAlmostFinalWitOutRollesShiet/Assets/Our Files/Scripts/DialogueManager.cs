@@ -11,10 +11,8 @@ public class DialogueManager : MonoBehaviour
     //jono dialogin sivuille
     private Queue<string> sentences;
     public Animator animator;
-    public Button yesBtn;
-    public Button noBtn;
-    public bool question;
-    private bool stopInput, buttons = false;
+    public Button yesBtn, noBtn;
+    private bool question, stopInput, buttons = false;
     private string scene;
 
     private GameStatus gameStatus;
@@ -36,8 +34,6 @@ public class DialogueManager : MonoBehaviour
         {
             DisplayNextSentence();
         }
-
-
     }
 
     private void LateUpdate()

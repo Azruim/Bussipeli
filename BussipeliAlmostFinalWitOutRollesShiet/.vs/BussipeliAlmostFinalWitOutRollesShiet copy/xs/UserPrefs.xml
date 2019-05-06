@@ -1,0 +1,23 @@
+﻿<Properties StartupConfiguration="{447C44EE-332F-96F8-CC5F-D4A0E053DFF1}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Our Files/Scripts/DialogueTrigger.cs">
+    <Files>
+      <File FileName="Assets/Our Files/Minigames/Imurointi/Scripts/Movement.cs" Line="18" Column="1" />
+      <File FileName="Assets/Our Files/Minigames/Imurointi/Scripts/Tiles.cs" Line="42" Column="10" />
+      <File FileName="Assets/Our Files/Scripts/GameStatus.cs" Line="1" Column="1" />
+      <File FileName="Assets/Our Files/Minigames/Imurointi/Scripts/Tile.cs" Line="1" Column="1" />
+      <File FileName="Assets/Our Files/Scripts/DialogueManager.cs" Line="45" Column="10" />
+      <File FileName="Assets/Our Files/Sprites/Fridge Store/ButtonHighlighted.cs" Line="85" Column="24" />
+      <File FileName="Assets/Our Files/Scripts/DialogueHighlight.cs" Line="24" Column="8" />
+      <File FileName="Assets/Our Files/Sprites/Fridge Store/ExitStore.cs" Line="1" Column="1" />
+      <File FileName="Assets/Our Files/Scripts/PlayerController.cs" Line="1" Column="1" />
+      <File FileName="Assets/Our Files/Scripts/DialogueTrigger.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -29,6 +29,8 @@ public class ButtonHighlighted : MonoBehaviour, ISelectHandler, IDeselectHandler
         soldSignImage = transform.GetChild(1).gameObject; //Gets the child image GameObject Sold_Sign.
         priceText = transform.GetChild(2).gameObject; //Gets the child text GameObject Price.
         priceText.GetComponent<Text>().text = price + "p";
+        PlayerController.movementOn = false;
+        
         //If our player doesn't have this item, we set Sold_Sign image "hidden", but if they have we set our Price text to be "hidden".
         if (!gameStatus.GetItemStatus(itemName))
         {
@@ -80,7 +82,8 @@ public class ButtonHighlighted : MonoBehaviour, ISelectHandler, IDeselectHandler
             soldSignImage.SetActive(true); //We set our Sold_Sign image active.
             priceText.SetActive(false); //We set our Price text as "hidden", when bought.
             //We update GameStatus so that it knows player now has this specific item, by sending the items name to it.
-            gameStatus.SetItemStatus(itemName, true); 
+            gameStatus.SetItemStatus(itemName, true);
+            transform.gameObject.GetComponent<DialogueTrigger>().TriggerDialogue();
         }
         //else
         //    Debug.Log("Not enough points/Or already bought");

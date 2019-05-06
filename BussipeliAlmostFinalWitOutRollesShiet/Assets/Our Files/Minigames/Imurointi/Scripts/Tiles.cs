@@ -7,22 +7,42 @@ public class Tiles : MonoBehaviour
     private GameObject[][] tiles = new GameObject[14][];
     [SerializeField]
     private GameObject tile;
+    private GameStatus gameStatus;
+    private bool[] holder;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameStatus = GameObject.Find("GameStatus").GetComponent<GameStatus>();
+        holder = gameStatus.GetShirtHolder();
+
+
         //Luodaan pelikenttä (vakiona likaiset ruudut)
-        for(int x = 0; x < 14; x++)
+        for (int x = 0; x < 14; x++)
         {
             tiles[x] = new GameObject[10];
-            for(int y = 0; y < 10; y++)
+            for (int y = 0; y < 10; y++)
             {
                 tiles[x][y] = Instantiate(tile);
                 tiles[x][y].transform.position = new Vector3(x, y, 0);
             }
         }
+
+        if (!holder[0])
+        {
+            tiles[3][6].GetComponent<Tile>().changeType(3);
+        }
+        if (!holder[1])
+        {
+            tiles[6][3].GetComponent<Tile>().changeType(3);
+        }
+        if (!holder[2])
+        {
+            tiles[8][3].GetComponent<Tile>().changeType(3);
+        }
+
         //Muutetaan ulkoreunat seiniksi
-        for(int i = 0; i < 14; i++)
+        for (int i = 0; i < 14; i++)
         {
             tiles[i][0].GetComponent<Tile>().changeType(0);
             tiles[i][9].GetComponent<Tile>().changeType(0);
