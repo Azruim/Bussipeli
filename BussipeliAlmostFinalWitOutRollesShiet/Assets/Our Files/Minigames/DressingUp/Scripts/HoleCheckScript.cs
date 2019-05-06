@@ -8,7 +8,8 @@ public class HoleCheckScript : MonoBehaviour
 
     private float timer;
     private float maxTime;
-    private bool gameEnd;
+    public bool gameEnd;
+    public float exitTime = 1;
 
     private GameStatus gameStatus;
 
@@ -28,15 +29,22 @@ public class HoleCheckScript : MonoBehaviour
     {
         if (gameEnd)
         {
+            exitTime -= Time.deltaTime;
+        }
+        if (gameEnd && exitTime <= 0)
+        {
             //Debug.Log(Time.deltaTime);
             //timer += Time.deltaTime;
             //if (timer >= maxTime)
             //{
                 Debug.Log("game ended");
 
+
                 SceneManager.LoadScene("main");
             //}
         }
+
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -60,6 +68,7 @@ public class HoleCheckScript : MonoBehaviour
             //Time.timeScale = 0;
             dressUpScript.gameOver = true;
             gameEnd = true;
+            exitTime -= Time.deltaTime;
         }
     }
 }

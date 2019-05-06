@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class DishRandomizer : MonoBehaviour
 {
     public bool dishInTheSink;
@@ -11,12 +11,13 @@ public class DishRandomizer : MonoBehaviour
     public bool correctButton;// katsoo, onko oikeaa nappulaa painettu. 
     public int BrushSum;
 
-    //Mukiin liittyviä booleja, tarkastetaan onko nappulat painettu oikeassa järjestyksessä.
+    //Mukiin liittyviä booleja, tarkastetaan onko nappulat painettu oikeassa järjestyksessä. Ei uskalla poistaa kun toimii.
     public bool firstMugButton;
     public bool secondMugButton;
     public bool thirdMugButton;
     public bool fourthMugButton;
-    public bool wrongMugKey;
+
+    public bool wrongMugKey;// onko oikeaa näppäintä painettu
     public float aKeyHitTimes, wKeyHitTimes;
 
     public int score;
@@ -25,7 +26,7 @@ public class DishRandomizer : MonoBehaviour
     public DishBrushMovement dbMovement;// periaatteessa turha, kaiken voi tehdä tässä yhdessä scriptissä.
     public CameraShake camerashake;
 
-    public float waitingTime = 1;// pieni odotusaika, jotta animaatiot kerkee mennä loppuun. Saatetaan poistaa.
+    public float waitingTime = 0.5f;// pieni odotusaika, jotta animaatiot kerkee mennä loppuun. Saatetaan poistaa.
 
     public GameObject fail, succes, gameOver;
     public float textShowTime = 0.5f;
@@ -34,6 +35,8 @@ public class DishRandomizer : MonoBehaviour
     public int mugBrushSum;
 
     private GameStatus gameStatus;
+
+    public Text scoreText;
 
 
     void Start()
@@ -114,6 +117,7 @@ public class DishRandomizer : MonoBehaviour
                 Destroy(GameObject.Find("Fork(Clone)"));
                 Destroy(GameObject.Find("Spoon(Clone)"));
                 BrushSum = 1;
+                wrongMugKey = true;
                 camerashake.shakeDuration = 0.5f;
                 fail.SetActive(true);
                 textShowTime = 0.5f;
@@ -158,6 +162,7 @@ public class DishRandomizer : MonoBehaviour
                 Destroy(GameObject.Find("Knife(Clone)"));
                 BrushSum = 1;
                 camerashake.shakeDuration = 0.5f;
+                wrongMugKey = true;
 
                 fail.SetActive(true);
                 textShowTime = 0.5f;
@@ -363,6 +368,8 @@ public class DishRandomizer : MonoBehaviour
      Clean();
      Lose();
 
+        scoreText.text = "Score:" + score.ToString();
+
     }
     void Clean()
     {
@@ -396,7 +403,7 @@ public class DishRandomizer : MonoBehaviour
             succes.SetActive(false);
         }
 
-        score++;
+        score +=2;
         
         aKeyHitTimes = 0;
         wKeyHitTimes = 0;

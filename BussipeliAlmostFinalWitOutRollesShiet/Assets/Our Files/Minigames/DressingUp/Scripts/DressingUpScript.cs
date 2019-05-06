@@ -18,6 +18,7 @@ public class DressingUpScript : MonoBehaviour
 
     public bool gameOver;
     public bool keyUp;
+    
 
     public Transform sock;
 
@@ -28,6 +29,8 @@ public class DressingUpScript : MonoBehaviour
     public float sockXOffset;
 
     public float movement;
+
+    public HoleCheckScript hCScript;
     
 
     // Start is called before the first frame update
@@ -43,7 +46,7 @@ public class DressingUpScript : MonoBehaviour
     {
         movement = 0;
         if (Input.GetKeyDown("w") || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Space)  
-            && transform.position.y < 3.5f && gameOver == false)
+            && transform.position.y < 3.5f && gameOver == false && hCScript.gameEnd==false)
         {
             //footRB2D.AddForce(transform.up * upForce, ForceMode2D.Impulse);
             position.y = transform.position.y;
@@ -64,6 +67,14 @@ public class DressingUpScript : MonoBehaviour
         if (tries <= 0)
         {
             SceneManager.LoadScene("main");
+        }
+
+        if(hCScript.gameEnd == true)
+        {
+            position.y = sock.transform.position.y;
+           
+            position.x = sock.transform.position.x;
+            transform.position = position;
         }
         //if(transform.position.y >= sock.transform.position.y - sockYOffset 
         //    && transform.position.x + footYOffset >=sock.transform.position.x -sockXOffset
