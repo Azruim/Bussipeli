@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
     private float movespeed, boostMultiplier;
     [SerializeField]
     private int endTime;
+    private Animator anim;
     private float currentMovespeed, startTime;
     private Vector3 direction, oldDirection;
     public float score = 0;
@@ -23,36 +24,77 @@ public class Movement : MonoBehaviour
         oldDirection = direction;
         startTime = 0;
 
+        anim = GetComponent<Animator>();
         gameStatus = GameObject.Find("GameStatus").GetComponent<GameStatus>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        anim.SetBool("MoveUp", false);
+        anim.SetBool("MoveDown", false);
+        anim.SetBool("MoveRight", false);
+        anim.SetBool("MoveLeft", false);
+
         if (Input.GetAxisRaw("Horizontal") == -1)
         {
             direction.x = -1;
             direction.y = 0;
+            anim.SetBool("MoveLeft", true);
         }
         if (Input.GetAxisRaw("Horizontal") == 1)
         {
             direction.x = 1;
             direction.y = 0;
+            anim.SetBool("MoveRight", true);
         }
         if (Input.GetAxisRaw("Vertical") == -1)
         {
             direction.y = -1;
             direction.x = 0;
+            anim.SetBool("MoveDown", true);
         }
         if (Input.GetAxisRaw("Vertical") == 1)
         {
             direction.y = 1;
             direction.x = 0;
         }
+
+        if (direction.y != 0 || direction.x != 0)
+        {
+            anim.SetBool("Move", true);
+        }
+
+        if (direction.y == 1)
+        {
+            anim.SetBool("MoveUp", true);
+        }
+        if (direction.y == -1)
+        {
+            anim.SetBool("MoveDown", true);
+        }
+        if (direction.x == 1)
+        {
+            anim.SetBool("MoveRight", true);
+        }
+        if (direction.x == -1)
+        {
+            anim.SetBool("MoveLeft", true);
+        }
+
+
         if (Input.GetKey("space"))
+        {
             currentMovespeed = movespeed * boostMultiplier;
+            anim.speed = 1f;
+        }
         else
+        {
             currentMovespeed = movespeed;
+            anim.speed = 0.5f;
+        }
+        
 
 
         var tmp = (direction - oldDirection).normalized; //lasketaan liikkeen suunta
