@@ -88,7 +88,7 @@ Transform:
   m_GameObject: {fileID: 8723723554549858386}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_LocalScale: {x: 30, y: 30, z: 1}
   m_Children:
   - {fileID: 4894226290189149521}
   m_Father: {fileID: 0}
@@ -128,10 +128,10 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1368260451
+  m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300002, guid: adc39f877cd23e0469f6cda9a15dddb4, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 21300034, guid: adc39f877cd23e0469f6cda9a15dddb4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isInTrigger: 0
   triggered: 0
-  speed: 5
+  speed: 50
   movement: {x: 0, y: 0}
 --- !u!95 &8723723554549858390
 Animator:
@@ -237,5 +237,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sortingOrderBase: 5000
-  offset: 0
+  offset: -10
   runOnlyOnce: 0

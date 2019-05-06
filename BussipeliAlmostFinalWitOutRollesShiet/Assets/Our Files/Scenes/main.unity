@@ -4147,51 +4147,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8723723554549858388, guid: 7feb15704c11344bc9299ecd930392d7,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 8723723554549858388, guid: 7feb15704c11344bc9299ecd930392d7,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 8723723554549858388, guid: 7feb15704c11344bc9299ecd930392d7,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8723723554549858387, guid: 7feb15704c11344bc9299ecd930392d7,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300034, guid: adc39f877cd23e0469f6cda9a15dddb4,
-        type: 3}
-    - target: {fileID: 8723723554549858387, guid: 7feb15704c11344bc9299ecd930392d7,
-        type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8723723554549858387, guid: 7feb15704c11344bc9299ecd930392d7,
-        type: 3}
-      propertyPath: m_SortingLayerID
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8723723554549858387, guid: 7feb15704c11344bc9299ecd930392d7,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4894226290828096124, guid: 7feb15704c11344bc9299ecd930392d7,
-        type: 3}
-      propertyPath: offset
-      value: -10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8723723554549858389, guid: 7feb15704c11344bc9299ecd930392d7,
-        type: 3}
-      propertyPath: speed
-      value: 50
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7feb15704c11344bc9299ecd930392d7, type: 3}

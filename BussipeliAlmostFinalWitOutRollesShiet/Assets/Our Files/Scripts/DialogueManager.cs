@@ -114,6 +114,7 @@ public class DialogueManager : MonoBehaviour
     void ChangeScene()
     {
         EndDialogue();
+        gameStatus.SetTimerOn(false);
         SceneManager.LoadScene(scene);  
     }
 }

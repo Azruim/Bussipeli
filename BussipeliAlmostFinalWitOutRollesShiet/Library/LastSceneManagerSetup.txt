@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Our Files/Scenes/Imuri.unity
+- path: Assets/Our Files/Scenes/main.unity
   isLoaded: 1
   isActive: 1
