@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{1D585657-DE67-FF05-7059-4CE141556E47}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Our Files/Scripts/DialogueManager.cs">
+    <Files>
+      <File FileName="Assets/Our Files/Scripts/DialogueManager.cs" Line="116" Column="23" />
+      <File FileName="Assets/Our Files/Sprites/Fridge Store/ButtonHighlighted.cs" Line="38" Column="15" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
