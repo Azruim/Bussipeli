@@ -1170,9 +1170,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - moi
-    - Banaani teksti
-    - Banaani teksti
+    - 
+    - 'You take a banana. '
+    - 'Just alone the knowledge of having something to eat today seems to enhance
+      your reflexes. '
+    - You decide to save it for later and feed on pure appreciation for its existence.
     question: 0
     scene: 
 --- !u!1 &331864899

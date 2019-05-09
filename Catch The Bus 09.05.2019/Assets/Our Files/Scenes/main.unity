@@ -1459,9 +1459,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - poop
-    - kukkuu
-    - 'put on dat sock m8 #FE'
+    - Hey, doorknob! The alarm went off ages ago!
+    - Don't you dare miss the bus again.
+    - "You\u2019ve got 2 minutes and then you're out the door!"
+    - "But first\u2026"
+    - Look at this completely and utterly unprecedented mess you've left here. Start
+      cleaning or I'll start screaming!!
+    - Come talk to me when you're ready to leave and I'll reward you for your diligence.
+    - 'Now, stop standing there like a lethargic coat rack and get moving! '
+    - 'Maybe start by putting on some socks! '
     question: 0
     scene: 
 --- !u!1 &876812911
@@ -2214,11 +2220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     sentences:
-    - Hey, doorknob!
-    - Look at this mess you've unforseenly left here. Start cleaning or I'll start
-      screaming!!
-    - And don't you dare miss the bus again!
-    - 'Now stop standing there like a lethargic coat rack and get moving! '
+    - 'Ready to leave? Think you''ve done your best? '
     question: 1
     scene: FridgeStore
 --- !u!1 &1578922160
